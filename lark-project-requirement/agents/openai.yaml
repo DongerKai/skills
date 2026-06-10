@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lark Project Requirement"
+  short_description: "Analyze Lark project requirements and implement them"
+  default_prompt: "Use $lark-project-requirement to analyze a Lark/Meego/Jira requirement link, inspect attached docs and images, then pause for confirmation before implementation."

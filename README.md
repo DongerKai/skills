@@ -6,15 +6,15 @@
 
 ## 可用 Skills
 
-### `feishu-project-bugfix`
+### `lark-project-bugfix`
 
-当用户提供 Feishu/Lark/Meego/Jira 的 bug 或缺陷工单链接，并希望 agent 在修改代码前先分析工单、评论、文档、截图和仓库代码时，使用这个 skill。
+当用户提供 Lark/Meego/Jira 的 bug 或缺陷工单链接，并希望 agent 在修改代码前先分析工单、评论、文档、截图和仓库代码时，使用这个 skill。
 
 这个 skill 要求在修改代码前保留人工确认节点。
 
-### `feishu-project-requirement`
+### `lark-project-requirement`
 
-当用户提供 Feishu/Lark/Meego/Jira 的需求、故事、任务或项目工单链接，并希望 agent 分析需求、查看关联文档和图片、对比当前仓库并产出实现方案时，使用这个 skill。
+当用户提供 Lark/Meego/Jira 的需求、故事、任务或项目工单链接，并希望 agent 分析需求、查看关联文档和图片、对比当前仓库并产出实现方案时，使用这个 skill。
 
 这个 skill 要求在开始实现前保留人工确认节点。
 
@@ -29,11 +29,11 @@
 ```text
 .
 ├── README.md
-├── feishu-project-bugfix/
+├── lark-project-bugfix/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml
-└── feishu-project-requirement/
+└── lark-project-requirement/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
@@ -50,8 +50,8 @@ rg "api_key|secret|token|password|AKIA|Bearer" .
 然后提交并推送：
 
 ```bash
-git add feishu-project-bugfix feishu-project-requirement README.md
-git commit -m "Add Feishu project skills"
+git add lark-project-bugfix lark-project-requirement README.md
+git commit -m "Add Lark project skills"
 git push
 ```
 
@@ -67,17 +67,17 @@ under `agents/`.
 
 ## Available Skills
 
-### `feishu-project-bugfix`
+### `lark-project-bugfix`
 
-Use this skill when a user provides a Feishu/Lark/Meego/Jira bug or defect work
+Use this skill when a user provides a Lark/Meego/Jira bug or defect work
 item link and wants the agent to inspect the report, comments, documents,
 screenshots, and repository code before proposing a fix.
 
 The skill requires a human confirmation checkpoint before code changes.
 
-### `feishu-project-requirement`
+### `lark-project-requirement`
 
-Use this skill when a user provides a Feishu/Lark/Meego/Jira requirement, story,
+Use this skill when a user provides a Lark/Meego/Jira requirement, story,
 task, or project work item link and wants the agent to analyze the requirement,
 inspect linked documents and images, compare it with the repository, and produce
 an implementation plan.
@@ -100,11 +100,11 @@ context.
 ```text
 .
 ├── README.md
-├── feishu-project-bugfix/
+├── lark-project-bugfix/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml
-└── feishu-project-requirement/
+└── lark-project-requirement/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
@@ -121,7 +121,7 @@ rg "api_key|secret|token|password|AKIA|Bearer" .
 Then commit and push:
 
 ```bash
-git add feishu-project-bugfix feishu-project-requirement README.md
-git commit -m "Add Feishu project skills"
+git add lark-project-bugfix lark-project-requirement README.md
+git commit -m "Add Lark project skills"
 git push
 ```

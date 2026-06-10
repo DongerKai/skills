@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lark Project Bugfix"
+  short_description: "Analyze Lark project bugs and prepare fixes"
+  default_prompt: "Use $lark-project-bugfix to analyze a Lark/Meego/Jira bug link, inspect details, comments, documents, and images, then pause for confirmation before code changes."

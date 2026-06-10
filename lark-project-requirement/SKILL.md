@@ -1,13 +1,13 @@
 ---
-name: feishu-project-requirement
-description: Use when the user provides a Feishu/Lark/Meego/Jira requirement, story, task, or project work item link and asks an AI coding agent to analyze the requirement, inspect details/comments/documents/images, compare it with the current repository, and pause for human confirmation before implementation. Also use when explicitly invoked as feishu-project-requirement or $feishu-project-requirement.
+name: lark-project-requirement
+description: Use when the user provides a Lark/Meego/Jira requirement, story, task, or project work item link and asks an AI coding agent to analyze the requirement, inspect details/comments/documents/images, compare it with the current repository, and pause for human confirmation before implementation. Also use when explicitly invoked as lark-project-requirement or $lark-project-requirement.
 ---
 
-# Feishu Project Requirement
+# Lark Project Requirement
 
 ## Purpose
 
-Turn a Feishu/Lark/Meego/Jira project work item link into a confirmed implementation plan, then complete the code change in the current repository after the user approves or adjusts the analysis.
+Turn a Lark/Meego/Jira project work item link into a confirmed implementation plan, then complete the code change in the current repository after the user approves or adjusts the analysis.
 
 This skill is for requirement work, not ordinary bug fixing. It is designed to work across AI coding agents and tool stacks. Preserve a human checkpoint between requirement analysis and code changes.
 
@@ -22,7 +22,7 @@ This skill is for requirement work, not ordinary bug fixing. It is designed to w
 
 ### 1. Identify the work item
 
-- Accept a Feishu/Lark/Meego/Jira project URL, or any text containing one.
+- Accept a Lark/Meego/Jira project URL, or any text containing one.
 - Prefer structured project tools when available because they can parse URLs and return work item data reliably.
 - If structured tools are insufficient, use available alternatives such as browser access, platform CLI tools, downloaded/exported files, screenshots, copied descriptions, or user-provided context.
 - If authentication or permissions are missing, tell the user exactly what cannot be read and continue with the accessible context.
@@ -36,7 +36,7 @@ Collect, when available:
 
 ### 2. Read requirement documents and images
 
-- For Feishu docs/wiki/sheets: extract the meaningful requirement text, tables, lists, links, and embedded references.
+- For Lark docs/wiki/sheets: extract the meaningful requirement text, tables, lists, links, and embedded references.
 - For attachments: download or open only the files needed for requirement understanding.
 - For images: inspect screenshots, prototypes, diagrams, error captures, field mappings, and annotations. Use local image viewing or OCR/vision-capable tools when available.
 - Keep source notes: record which details came from the work item, comments, document text, image content, or repository inspection.
@@ -90,12 +90,12 @@ Report:
 - What changed.
 - Where the important files are.
 - What verification ran and any environment limitations.
-- Any follow-up the user must handle outside the repository, such as product confirmation, database deployment, or Feishu work item updates.
+- Any follow-up the user must handle outside the repository, such as product confirmation, database deployment, or Lark work item updates.
 
 ## Tool Preferences
 
-- Project/work-item tools: Feishu/Lark/Meego/Jira APIs, MCP servers, browser automation, CLI tools, exported files, or copied content.
-- Document tools: Feishu/Lark docs, wiki, files, sheets, attachments, OCR, and image viewers when available.
+- Project/work-item tools: Lark/Meego/Jira APIs, MCP servers, browser automation, CLI tools, exported files, or copied content.
+- Document tools: Lark docs, wiki, files, sheets, attachments, OCR, and image viewers when available.
 - Repository tools: fast search, file readers, version-control diff, build systems, package managers, test runners, and linters.
 - Image tools: inspect downloaded screenshots, diagrams, prototypes, recordings, and annotated images.
 
@@ -104,5 +104,5 @@ Report:
 - Never change code before the analysis checkpoint is confirmed.
 - Do not invent details for inaccessible documents, images, or work item fields.
 - Do not use service tokens to bypass a requirement that depends on the real user's permissions.
-- Do not update the Feishu work item status, comments, owners, or fields unless the user explicitly asks.
+- Do not update the Lark work item status, comments, owners, or fields unless the user explicitly asks.
 - If the implementation boundary is unclear, especially for cross-center or cross-partition behavior, ask before coding.
