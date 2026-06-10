@@ -2,58 +2,37 @@
 
 语言：中文 | [English](#english)
 
-这个仓库包含可复用的 AI coding agent skills。每个 skill 都是一个独立目录，包含必需的 `SKILL.md`，以及可选的 `agents/` 元数据。
+这个仓库是我的 AI coding agent skills 索引页。具体 skill 已拆分到独立仓库，便于通过 `npx skills add owner/repo` 直接安装。
 
 ## 可用 Skills
 
-### `lark-project-bugfix`
+### Lark Project Bugfix
 
-当用户提供 Lark/Meego/Jira 的 bug 或缺陷工单链接，并希望 agent 在修改代码前先分析工单、评论、文档、截图和仓库代码时，使用这个 skill。
+用于分析 Lark/Meego/Jira bug 或缺陷工单，读取工单详情、评论、文档、截图和当前代码仓库，并在修改代码前输出人工确认方案。
 
-这个 skill 要求在修改代码前保留人工确认节点。
+仓库：[DongerKai/lark-project-bugfix](https://github.com/DongerKai/lark-project-bugfix)
 
-### `lark-project-requirement`
-
-当用户提供 Lark/Meego/Jira 的需求、故事、任务或项目工单链接，并希望 agent 分析需求、查看关联文档和图片、对比当前仓库并产出实现方案时，使用这个 skill。
-
-这个 skill 要求在开始实现前保留人工确认节点。
-
-## 兼容性
-
-这些 skills 按 agent-neutral 的方式编写，可用于 Codex，也可用于其他支持 skill 风格指令、项目工具、浏览器自动化、CLI 访问或仓库检查能力的 AI coding agents。
-
-当某个特定集成不可用时，agent 应使用当前可用的最佳替代方式，例如平台 API、MCP 工具、浏览器访问、CLI 工具、导出文件、截图、复制的工单文本或用户提供的上下文。
-
-## 仓库结构
-
-```text
-.
-├── README.md
-├── lark-project-bugfix/
-│   ├── SKILL.md
-│   └── agents/
-│       └── openai.yaml
-└── lark-project-requirement/
-    ├── SKILL.md
-    └── agents/
-        └── openai.yaml
-```
-
-## 发布
-
-推送前建议检查是否包含密钥或私有凭据：
+安装：
 
 ```bash
-rg "api_key|secret|token|password|AKIA|Bearer" .
+npx skills add DongerKai/lark-project-bugfix
 ```
 
-然后提交并推送：
+### Lark Project Requirement
+
+用于分析 Lark/Meego/Jira 需求、故事、任务或项目工单，读取工单详情、评论、文档、图片和当前代码仓库，并在实现前输出人工确认方案。
+
+仓库：[DongerKai/lark-project-requirement](https://github.com/DongerKai/lark-project-requirement)
+
+安装：
 
 ```bash
-git add lark-project-bugfix lark-project-requirement README.md
-git commit -m "Add Lark project skills"
-git push
+npx skills add DongerKai/lark-project-requirement
 ```
+
+## 说明
+
+本仓库不再直接存放具体 skill 内容。请进入对应独立仓库查看 `SKILL.md`、README 和 agent metadata。
 
 ---
 
@@ -61,67 +40,34 @@ git push
 
 Language: [中文](#ai-agent-skills) | English
 
-This repository contains reusable skills for AI coding agents. Each skill is a
-self-contained directory with a required `SKILL.md` and optional agent metadata
-under `agents/`.
+This repository is an index for my AI coding agent skills. The actual skills have been split into standalone repositories so they can be installed directly with `npx skills add owner/repo`.
 
 ## Available Skills
 
-### `lark-project-bugfix`
+### Lark Project Bugfix
 
-Use this skill when a user provides a Lark/Meego/Jira bug or defect work
-item link and wants the agent to inspect the report, comments, documents,
-screenshots, and repository code before proposing a fix.
+Analyze Lark/Meego/Jira bug or defect work items, inspect work item details, comments, documents, screenshots, and the current repository, then pause for human confirmation before code changes.
 
-The skill requires a human confirmation checkpoint before code changes.
+Repository: [DongerKai/lark-project-bugfix](https://github.com/DongerKai/lark-project-bugfix)
 
-### `lark-project-requirement`
-
-Use this skill when a user provides a Lark/Meego/Jira requirement, story,
-task, or project work item link and wants the agent to analyze the requirement,
-inspect linked documents and images, compare it with the repository, and produce
-an implementation plan.
-
-The skill requires a human confirmation checkpoint before implementation.
-
-## Compatibility
-
-These skills are written to be agent-neutral. They can be used by Codex or by
-other AI coding agents that support skill-style instructions, project tools,
-browser automation, CLI access, or repository inspection.
-
-When a specific integration is unavailable, the agent should use the best
-available alternative, such as platform APIs, MCP tools, browser access, CLI
-tools, exported files, screenshots, copied work item text, or user-provided
-context.
-
-## Repository Layout
-
-```text
-.
-├── README.md
-├── lark-project-bugfix/
-│   ├── SKILL.md
-│   └── agents/
-│       └── openai.yaml
-└── lark-project-requirement/
-    ├── SKILL.md
-    └── agents/
-        └── openai.yaml
-```
-
-## Publishing
-
-Before pushing changes, check for secrets or private credentials:
+Install:
 
 ```bash
-rg "api_key|secret|token|password|AKIA|Bearer" .
+npx skills add DongerKai/lark-project-bugfix
 ```
 
-Then commit and push:
+### Lark Project Requirement
+
+Analyze Lark/Meego/Jira requirements, stories, tasks, or project work items, inspect work item details, comments, documents, images, and the current repository, then pause for human confirmation before implementation.
+
+Repository: [DongerKai/lark-project-requirement](https://github.com/DongerKai/lark-project-requirement)
+
+Install:
 
 ```bash
-git add lark-project-bugfix lark-project-requirement README.md
-git commit -m "Add Lark project skills"
-git push
+npx skills add DongerKai/lark-project-requirement
 ```
+
+## Note
+
+This repository no longer stores concrete skill contents. Open each standalone repository to view its `SKILL.md`, README, and agent metadata.
