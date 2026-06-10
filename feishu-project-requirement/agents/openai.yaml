@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feishu Project Requirement"
+  short_description: "Analyze Feishu project requirements and implement them"
+  default_prompt: "Use $feishu-project-requirement to analyze a Feishu/Lark/Meego/Jira requirement link, inspect attached docs and images, then pause for confirmation before implementation."
